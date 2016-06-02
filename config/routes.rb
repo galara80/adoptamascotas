@@ -1,13 +1,12 @@
 Rails.application.routes.draw do
+
   get 'pages/home'
 
   get 'pages/index'
-
-  get 'pages/index'
-
-  get 'pages/home'
 
   resources :tipo_servicios
+  resources :datos_personals
+  
   root 'pages#home' #controlador pages, action home
 
   # The priority is based upon order of creation: first created -> highest priority.
