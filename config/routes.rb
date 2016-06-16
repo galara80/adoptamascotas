@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   get 'pages/index'
 
+  resources :servicios
   resources :tipo_servicios
   resources :datos_personals
   
