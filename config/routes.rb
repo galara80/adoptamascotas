@@ -4,9 +4,13 @@ Rails.application.routes.draw do
 
   get 'pages/index'
 
+  get 'datos_personals/obtener_ciudades/:id' => 'datos_personals#obtener_ciudades'
+
   resources :servicios
   resources :tipo_servicios
   resources :datos_personals
+  resources :animal_adoptars
+  resources :animal_adoptar_fotos
   
   root 'pages#home' #controlador pages, action home
 

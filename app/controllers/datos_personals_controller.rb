@@ -16,7 +16,7 @@ before_action :cargarOpcionesDelMenuServicios
   def create
     #puts params[:datos_personal][:nombre]
     #render :text => params[:datos_personal].inspect
-
+    @ciudades =[]
      @datos_personal = DatosPersonal.new(datos_personal_params)
 
       respond_to do |format|
@@ -31,10 +31,13 @@ before_action :cargarOpcionesDelMenuServicios
   end
 
   def edit
+    @ciudades =[]
     @datos_personals = DatosPersonal.find ( params[:id]  )
+
   end
 
   def update
+    @ciudades =[]
     respond_to do |format|
       if @datos_personal.update(datos_personal_params)
         format.html {redirect_to @datos_personal, notice: 'Sus datos, fueron modificados'}
@@ -61,5 +64,9 @@ before_action :cargarOpcionesDelMenuServicios
   @datos_personal = DatosPersonal.find(params[:id])
   end
 
+def obtener_ciudades
+    @ciudades = DatosPersonal.estados_ciudades_venezolanos_hash[params[:estado_id]][:municipios].insert(0,DatosPersonal.estados_ciudades_venezolanos_hash[params[:estado_id]][:capital])
+
+end
 
 end
