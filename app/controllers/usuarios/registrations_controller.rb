@@ -3,6 +3,7 @@ class Usuarios::RegistrationsController < Devise::RegistrationsController
 # before_action :configure_account_update_params, only: [:update]
 layout 'administrador', only: [:edit, :update, :create, :show, :index]
 
+
   # GET /resource/sign_up
   # def new
   #   super
