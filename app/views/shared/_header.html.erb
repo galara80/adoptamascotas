@@ -35,11 +35,27 @@
             <%end%>
         </ul>
        <%end%>            
-        </li>        
-        <li><a href="#"><i class="fa fa-user" aria-hidden="true"></i>
-Ingresar</a></li> 
+        </li>
+
+<%if !current_usuario%> <li>
+
+<%=link_to new_usuario_session_path do %> <i class="fa fa-user"></i>Ingresar
+
+<%end%> </li>
+
+<% else %>
+<li><a href="#">Hola <%=current_usuario.email%></a></li> <li>
+
+<%=link_to destroy_usuario_session_path, method: :delete do %> <i class="fa fa-user"></i>Salir
+
+<%end%> </li>
+
+<%end%> 
+
         <li><a href="#"><i class="fa fa-envelope-o" aria-hidden="true"></i>
 Contactenos</a></li>    
+
+
       </ul>
     </div><!-- /.navbar-collapse -->
 

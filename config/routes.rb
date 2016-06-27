@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
 
+  devise_for :usuarios, controllers: { sessions: 'usuarios/sessions', registrarions: 'usuarios/registrations'}
   get 'pages/home'
 
   get 'pages/index'
+
+  get 'pages/home_admin' => 'pages#home_admin'
 
   get 'datos_personals/obtener_ciudades/:id' => 'datos_personals#obtener_ciudades'
 
